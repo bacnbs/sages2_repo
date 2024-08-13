@@ -1,181 +1,76 @@
-# EEGFeaturesExtraction
-This is a repository for
-1. extracting and storing features from resting state EEG data.
-2. running data visualization and statistical tests.
-3. running machine learning tasks.
+# Codes for Prediction of Post-Operative Delirium in Older Adults from Preoperative Cognition and Alpha Power from Resting-State EEG
 
-This README.md is for general usage/getting start. For task/project specific README, go to wikis folder.
+ For "Prediction of Post-Operative Delirium in Older Adults from Preoperative Cognition and Alpha Power from Resting-State EEG."
 
-Please email me if you're having trouble setting up or you found any bugs at mning@bidmc.harvard.edu. (If I'm no longer employed at BIDMC, you can report bug at GitHub's Issues.)
+**Authors**: Matthew Ning<sup>a,1</sup>, Andrei Rodionova<sup>b,c,1</sup>, Jessica M. Ross<sup>a,d,e</sup>, Recep A. Ozdemir<sup>a,f,g</sup>, Maja Burch<sup>a</sup>, Shu Jing Lian<sup>a</sup>, David Alsop<sup>g, h</sup>, Michele Cavallari<sup>h,i</sup>, Bradford C. Dickerson<sup>g,j</sup>, Tamara G. Fong<sup>f,g,k</sup>, Richard N. Jones<sup>l</sup>, Towia A. Libermann<sup>g,m</sup>, Edward R. Marcantonio<sup>g,n</sup>, Emiliano Santarnecchi<sup>a,g,o</sup>, Eva M. Schmitt<sup>k</sup>, Alexandra Touroutoglou<sup>g,j</sup>, Thomas G. Travison<sup>g,k</sup>, Leah Acker<sup>p,q,s</sup>, Melody Reese<sup>p,q</sup>, Haoqi Sun<sup>f,j,r</sup>, Brandon Westover<sup>f,j,r</sup>, Miles Berger<sup>p,q,s,t,2</sup>, Alvaro Pascual-Leone<sup>f,g,k,2</sup>, Sharon K. Inouye<sup>g,k,m,2</sup> and Mouhsin M. Shafi<sup>a,f,g,2,*</sup> for the SAGES II Study Group and the INTUIT/PRIME Study Groups
 
-## Getting Start
-None requires admin rights:
-1. [git](https://git-scm.com/downloads)
-2. GitHub account
-3. [miniforge](https://github.com/conda-forge/miniforge)
-4. [python 3.10](https://www.python.org/downloads/windows/) (DO NOT RUN AS ADMIN RIGHTS)
+**Affliation**:
 
-Notice on Git installation or configuration if already installed:
-If you're installing Git for the first time, on the set-up page, click on the <strong>Override the default branch name for new repositories</strong> and in the textbox, put down `main`.
+a. Berenson-Allen Center for Noninvasive Brain Stimulation, Beth Israel Deaconess Medical Center, Boston, MA, USA
 
-If you've already installed Git, you can run the following command:
-```
-git config --global init.defaultBranch main
-```
-This will change the default branch name from master to main.
+b. BioMag Laboratory, HUS Medical Imaging Center, Helsinki University Hospital, Helsinki, Finland
 
-## Setting up Repository
-Whether you're interested in making contribution to this repository or just running the codes for your own project, I strongly suggest GitHub forking and cloning this over cloning alone. Instructions for both forking and cloning are shown below.
+c. Faculty of Educational Sciences, University of Helsinki, University of Helsinki, Finland
 
-### Option 1: GitHub fork and clone
-Copied/modified from [scikit-learn](https://scikit-learn.org/dev/developers/contributing.html)
-1. Create an account on GitHub if you do not already have one.
-2. Fork the project repository: click on the ‘Fork’ button near the top of the page. This creates a copy of the code under your account on the GitHub user account. For more details on how to fork a repository see this guide.
-3. Clone your fork of the scikit-learn repo from your GitHub account to your local disk. Open miniforge's command prompt and run the following command::
-```
-git clone git@github.com:YourLogin/EEGFeaturesExtraction.git  # add --depth 1 if your connection is slow
-cd scikit-learn
-```
-4. Follow steps 2-6 in [Building from source](https://scikit-learn.org/dev/developers/advanced_installation.html#install-bleeding-edge) to build scikit-learn in development mode and return to this document.
-5. Create a new python environment and install the development dependencies:
-   - For the full setup (can be slow), open miniforge's command prompt and run the following command:
-     ```
-     conda create --name mne --file requirements_conda.txt
-     ```
-   - For the minimal setup (faster), open miniforge's command prompt and run the following command (miniforge should've already install libmamba). You'll need to install additional packages as needed:
-     ```
-     conda create --solver=libmamba --override-channels --channel=conda-forge --name=mne mne
-     ```
-6. Add the upstream remote. This saves a reference to the main repository, which you can use to keep your repository synchronized with the latest changes. In miniforge's command prompt:
-```
-git remote add upstream git@github.com:NoPenguinsLand/EEGFeaturesExtraction.git
-```
-7. Check that the upstream and origin remote aliases are configured correctly by running git remote -v which should display. In miniforge's command prompt:
-```
-origin  git@github.com:YourLogin/EEGFeaturesExtraction.git (fetch)
-origin  git@github.com:YourLogin/EEGFeaturesExtraction.git (push)
-upstream        git@github.com:NoPenguinsLand/EEGFeaturesExtraction.git (fetch)
-upstream        git@github.com:NoPenguinsLand/EEGFeaturesExtraction.git (push)
-```
+d. Veterans Affairs Palo Alto Healthcare System, and the Sierra Pacific Mental Illness, Research, Education, and Clinical Center, Palo Alto, CA, USA
 
-### Option 2: Git clone to local drive
-To clone the repository into a local directory:
-1. In Miniforge command prompt, go to the local directory where you want the cloned repo to reside. For example, if your local directory is <strong>C:\Users\this_user\Documents\GitHub_Repos</strong>, then run the following command: ```cd "C:\Users\this_user\Documents\GitHub_Repos"```
-2. Then to clone only a single brnach of the remote repository to the local direcoty, run the following command: ```git clone -b SharedCopy --single-branch https://github.com/NoPenguinsLand/EEGFeaturesExtraction.git```.
+e. Department of Psychiatry and Behavioral Sciences, Stanford Medical School, Stanford, CA, USA
 
-It should looks sometihng like this:
-```Cloning into 'EEGFeaturesExtraction'...
-remote: Enumerating objects: 350, done.
-remote: Counting objects: 100% (350/350), done.
-remote: Compressing objects: 100% (234/234), done.
-remote: Total 350 (delta 214), reused 240 (delta 108), pack-reused 0
-Receiving objects: 100% (350/350), 963.94 KiB | 801.00 KiB/s, done.
-Resolving deltas: 100% (214/214), done.
-Updating files: 100% (53/53), done.
-```
+f. Department of Neurology, Beth Israel Deaconess Medical Center, Boston, MA, USA
 
-### Update local repo with the latest changes from the remote branch
-To update the cloned repo on local directory, change directory to the location of local repo. For example, if your local directory is <strong>C:\Users\this_user\Documents\GitHub_Repos</strong>, then it can be done in one of the two ways:
+g. Harvard Medical School, Boston, MA, USA
 
-1. Open command prompt and run the following command: ```cd "C:\Users\this_user\Documents\GitHub_Repos"```
-2. In File Explorer, go to the aforementioned directory, right click and select the "Git Bash Here" option (if you have git installed)
+h. Department of Radiology, Beth Israel Deaconess Medical Center, Boston, MA, USA
 
-Then run the following command:
-```
-git checkout main
-git fetch upstream
-git merge upstream/main
-```
+i. Center for Neurological Imaging, Department of Radiology, Brigham and Women’s Hospital, Boston, MA, USA
 
-It should looks something like this:
+j. Department of Neurology, Massachusetts General Hospital, Boston, MA, USA
 
-```
-remote: Enumerating objects: 5, done.
-remote: Counting objects: 100% (5/5), done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
-Unpacking objects: 100% (3/3), 1011 bytes | 1024 bytes/s, done.
-From https://github.com/NoPenguinsLand/EEGFeaturesExtraction
- * branch            SharedCopy -> FETCH_HEAD
-   976ec6a..d1c9509  SharedCopy -> origin/SharedCopy
-Updating 976ec6a..d1c9509
-Fast-forward
- README.md | 8 +++-----
- 1 file changed, 3 insertions(+), 5 deletions(-)
-```
+k. Hinda and Arthur Marcus Institute for Aging Research, Hebrew SeniorLife, Boston, MA, USA
 
-To update the clone on R drive, change directory to the following path:
+l. Department of Psychiatry and Human Behavior, Department of Neurology, Warren Alpert Medical School, Brown University, Providence, RI, USA
 
-<strong>
-"R:\Studies_Supporting Information\Standardized Data Analysis\GitHub_Repos\EEGFeaturesExtraction"
-</strong>
+m. Department of Medicine, Beth Israel Deaconess Medical Center, Boston, MA, USA
 
-This can be done in one of two ways:
-1. Open command prompt and run the following command: ```cd /d "R:\Studies_Supporting Information\Standardized Data Analysis\GitHub_Repos\EEGFeaturesExtraction"```
-2. In File Explorer, go to the aforementioned directory, right click and select the "Git Bash Here" option (if you have git installed)
+n. Divisions of General Medicine and Gerontology, Department of Medicine, Beth Israel Deaconess Medical Center, Boston, MA, USA
 
-Then run the following command:
-```
-git checkout main
-git fetch upstream
-git merge upstream/main
-```
+o. Precision Neuroscience & Neuromodulation Program (PNN), Gordon Center for Medical Imaging, Department of Radiology, Massachusetts General Hospital, Boston, MA, USA
 
-### Create new local branch
-Before making any changes to the codes, create a new local branch called `devBrnch` branch with the following command.
+p. Department of Anesthesiology, Duke University School of Medicine, Durham, NC, USA
 
-```git checkout -b devBrnch```
+q. Duke Center for the Study of Aging and Human Development, Duke University School of Medicine, Durham, NC, USA
 
-This is where I'd suggest making changes to the codes.
+r. Henry and Allison McCance Center for Brain Health at Mass General
 
-### Install pre-commit and pre-commit hooks
-Pre-commit hooks are a great way to both identify coding issues and enforce best coding practices before committing changes to local repository.
-In miniforge command prompt, activate `mne` environment first and run the following commands
-```
-pip install pre-commit
-pre-commit install
-```
-pre-commit checks can be disabled for a particular commit with `git commit -n`.
+s. Center for Cognitive Neuroscience, Duke University, Durham, NC, USA
 
-## Code Development
-### Add changes to local repository
+t. Duke-UNC Alzheimer's Disease Research Center, Durham, NC, USA
+
+1. These co-first authors contribute equally to this work.
+
+2. These co-senior authors contribute equally to this work.
+
+*Corresponding Author: (Only 1 person can be a corresponding author).
+
+Berenson-Allen Center for Non-Invasive Brain Stimulation, Beth Israel Deaconess Medical Center, Department of Neurology, Harvard Medical School, Boston, MA, USA;
+
+mshafi@bidmc.harvard.edu
 
 
-```
-git add .
-pre-commit run
-```
-if `pre-commit run` returns with errors, it'll either automatically fix whenever possible or marked errors to be manually fixed. After fixing all errors from pre-commit hooks, add the files to index by running the following commands
-```
-git add .
-```
+**Preprint**: TBD
 
-### Push changes from local repository to remote repository
-After you've added changes to the local repository, you can push these to the remote repository. Here, we'll be using forked repository as the remote repository.
-```
-git commit -m "message"
-git push origin devBrnch
-```
+**Citation**: 
 
-### To run code from command prompt
-To run from command prompt:
-1. open Miniforge Prompt
-2. Run the following command: ```mamba activate mne```. This will use the mne virtual environment with the python interpreter and all of the required python packages.
-3. Using Miniforge Prompt, change directory to the one above EEGFeaturesExtraction head directory. (E.g., your repo is in ..\CNBS_Projects\EEGFeaturesExtraction, cd to <strong>"C:\Users\mning\Documents\CNBS_Projects"</strong>.)
-4. run ```python -m EEGFeaturesExtraction.<script_name>```
+> ##### TBD
 
-### To run code from IDE
-I personally use [PyDev for Eclipse](https://www.pydev.org/manual_101_install.html).
+**Publication**: 
 
-### Contribute to this repository for the BA-CNBS organization
-To make contributions, first please let me know so I can minimize potential merge conflicts.
+**Dataset**: TBD
 
-Again, I strongly suggest using GitHub's Pull Request. [See next for differences between Pull Request and local merge](#pull-request-vs-local-merge)
+**Abstract**: 
 
-### Pull Request vs Local Merge
-For major changes, I'd suggest doing Pull Request on GitHub. This way, we can use GitHub's code review platform. For minor changes, merging local branches before pushing upstream is fine since the main branch isn't protected.
+**Abbreviation**:
+1. SAGES: Successful Aging after Elective Surgery (NIH-NIA P01AG031720)
+2. INTUIT: Investigating Neuroinflammation Underlying Postoperative Cognitive Dysfunction (ClinicalTrials.gov ID: NCT03273335)
+3. PRIME: Physical Resilience Indicators and Mechanisms in the Elderly (NIH-NIA UH2AG056925)
 
-## Appendix
-### Resources for learning Git
-1. [Visualization of Git](https://www.ndpsoftware.com/git-cheatsheet.html#loc=index)
-2. [The Bible of Git](https://git-scm.com/book/en/v2) there's no substitute.
