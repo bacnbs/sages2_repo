@@ -2,7 +2,7 @@
 
  For "Prediction of Post-Operative Delirium in Older Adults from Preoperative Cognition and Alpha Power from Resting-State EEG."
 
-**Authors**: Matthew Ning<sup>a,1</sup>, Andrei Rodionova<sup>b,c,1</sup>, Jessica M. Ross<sup>a,d,e</sup>, Recep A. Ozdemir<sup>a,f,g</sup>, Maja Burch<sup>a</sup>, Shu Jing Lian<sup>a</sup>, David Alsop<sup>g, h</sup>, Michele Cavallari<sup>h,i</sup>, Bradford C. Dickerson<sup>g,j</sup>, Tamara G. Fong<sup>f,g,k</sup>, Richard N. Jones<sup>l</sup>, Towia A. Libermann<sup>g,m</sup>, Edward R. Marcantonio<sup>g,n</sup>, Emiliano Santarnecchi<sup>a,g,o</sup>, Eva M. Schmitt<sup>k</sup>, Alexandra Touroutoglou<sup>g,j</sup>, Thomas G. Travison<sup>g,k</sup>, Leah Acker<sup>p,q,s</sup>, Melody Reese<sup>p,q</sup>, Haoqi Sun<sup>f,j,r</sup>, Brandon Westover<sup>f,j,r</sup>, Miles Berger<sup>p,q,s,t,2</sup>, Alvaro Pascual-Leone<sup>f,g,k,2</sup>, Sharon K. Inouye<sup>g,k,m,2</sup> and Mouhsin M. Shafi<sup>a,f,g,2,*</sup> for the SAGES II Study Group and the INTUIT/PRIME Study Groups
+**Authors**: Matthew Ning<sup>a,1</sup>, Andrei Rodionov<sup>a,b,c,1</sup>, Jessica M. Ross<sup>a,d,e</sup>, Recep A. Ozdemir<sup>a,f,g</sup>, Maja Burch<sup>a</sup>, Shu Jing Lian<sup>a</sup>, David Alsop<sup>g, h</sup>, Michele Cavallari<sup>h,i</sup>, Bradford C. Dickerson<sup>g,j</sup>, Tamara G. Fong<sup>f,g,k</sup>, Richard N. Jones<sup>l</sup>, Towia A. Libermann<sup>g,m</sup>, Edward R. Marcantonio<sup>g,n</sup>, Emiliano Santarnecchi<sup>a,g,o</sup>, Eva M. Schmitt<sup>k</sup>, Alexandra Touroutoglou<sup>g,j</sup>, Thomas G. Travison<sup>g,k</sup>, Leah Acker<sup>p,q,s</sup>, Melody Reese<sup>p,q</sup>, Haoqi Sun<sup>f,j,r</sup>, Brandon Westover<sup>f,j,r</sup>, Miles Berger<sup>p,q,s,t,2</sup>, Alvaro Pascual-Leone<sup>f,g,k,2</sup>, Sharon K. Inouye<sup>g,k,m,2</sup> and Mouhsin M. Shafi<sup>a,f,g,2,*</sup> for the SAGES II Study Group and the INTUIT/PRIME Study Groups
 
 **Affliation**:
 
@@ -48,26 +48,28 @@ t. Duke-UNC Alzheimer's Disease Research Center, Durham, NC, USA
 
 1. These co-first authors contribute equally to this work.
 
-2. These co-senior authors contribute equally to this work.
+2. Shared senior authorship.
 
 *Corresponding Author: (Only 1 person can be a corresponding author).
 
 Berenson-Allen Center for Non-Invasive Brain Stimulation, Beth Israel Deaconess Medical Center, Department of Neurology, Harvard Medical School, Boston, MA, USA;
 
-mshafi@bidmc.harvard.edu
+mshafi at bidmc.harvard.edu
 
 
-**Preprint**: TBD
+**Preprint**: [Preprint](https://www.medrxiv.org/content/10.1101/2024.08.15.24312053v1)
 
-**Citation**: 
+**DOI**: [https://doi.org/10.1101/2024.08.15.24312053]
 
-> ##### TBD
+**Citation**:
+
+> ##### Ning, M. _et al._, Prediction of Post-Operative Delirium in Older Adults from Preoperative Cognition and Alpha Power from Resting-State EEG. medRxiv (2024) doi:10.1101/2024.08.15.24312053
 
 **Publication**: 
 
-**Dataset**: TBD
+**Dataset**: Anticipated to become available in late 2025.
 
-**Abstract**: 
+**Abstract**: Postoperative Delirium (POD) is the most common complication following surgery among older adults, and has been consistently associated with increased mortality and morbidity, cognitive decline, and loss of independence, as well as markedly increased health-care costs. The development of new tools to identify individuals at high risk for POD could guide clinical decision-making and enable targeted interventions to potentially decrease delirium incidence and POD-related complications. In this study, we used machine learning techniques to evaluate whether baseline (pre-operative) cognitive function and resting-state electroencephalography could be used to identify patients at risk for POD. Pre-operative resting-state EEGs and the Montreal Cognitive Assessment (MoCA) were collected from 85 patients (age = 73 +- 6.4 years) undergoing elective surgery, 12 of whom subsequently developed POD. The model with the highest f1-score for predicting delirium, a linear-discriminant analysis (LDA) model incorporating MoCA scores and occipital alpha-band EEG features, was subsequently validated in an independent, prospective cohort of 51 older adults (age ≥ 60) undergoing elective surgery, 6 of whom developed POD. The LDA-based model, with a total of 7 features, was able to predict POD with area under the receiver operating characteristic curve, specificity and accuracy all >90%, and sensitivity > 80%, in the validation cohort. Notably, models incorporating both resting-state EEG and MoCA scores outperformed those including either EEG or MoCA alone. While requiring prospective validation in larger cohorts, these results suggest that prediction of POD with high accuracy may be feasible in clinical settings using simple and widely available clinical tools.
 
 **Abbreviation**:
 1. SAGES: Successful Aging after Elective Surgery (NIH-NIA P01AG031720)
